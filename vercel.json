@@ -1,22 +1,22 @@
 {
-  "version": 2,
-  "name": "billix",
-  "buildCommand": "npm run build",
-  "outputDirectory": "client/dist",
-  "framework": "vite",
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "server/server.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
+    "version": 2,
+    "name": "billix",
+    "buildCommand": "npm run build",
+    "outputDirectory": "client/dist",
+    "framework": "vite",
+    "rewrites": [
+          {
+                  "source": "/api/(.*)",
+                  "destination": "/server/server.js"
+          },
+          {
+                  "source": "/(.*)",
+                  "destination": "/client/dist/index.html"
+          }
+    ],
+    "functions": {
+          "server/server.js": {
+                  "runtime": "nodejs20.x"
+          }
     }
-  ],
-  "functions": {
-    "server/server.js": {
-      "runtime": "vercel-node@latest"
-    }
-  }
 }
